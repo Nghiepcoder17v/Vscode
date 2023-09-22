@@ -1,0 +1,62 @@
+{
+	"name": "dracula-high-contrast",
+	"displayName": "Evondev Dracula",
+	"description": "Dracula Theme High Contrast - base on Dracula Official Theme",
+	"version": "0.2.43",
+	"publisher": "evondev",
+	"engines": {
+		"vscode": "^1.20.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/evondev/evondev-dracula"
+	},
+	"icon": "icon.png",
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Evondev Dracula High Contrast",
+				"uiTheme": "vs-dark",
+				"path": "./themes/Dracula-high-contrast.json"
+			},
+			{
+				"label": "Evondev Dracula Normal Contrast",
+				"uiTheme": "vs-dark",
+				"path": "./themes/Dracula-normal-contrast.json"
+			},
+			{
+				"label": "Evondev Dracula New Colour",
+				"uiTheme": "vs-dark",
+				"path": "./themes/Dracula-new-contrast.json"
+			},
+			{
+				"label": "Evondev Dracula Night Contrast",
+				"uiTheme": "vs-dark",
+				"path": "./themes/Dracula-night-contrast.json"
+			},
+			{
+				"label": "Evondev Dracula Darker Contrast",
+				"uiTheme": "vs-dark",
+				"path": "./themes/Dracula-darker-contrast.json"
+			},
+			{
+				"label": "Evondev Dracula Minimal Contrast",
+				"uiTheme": "vs-dark",
+				"path": "./themes/Dracula-minimal-contrast.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "7c2f263b-00aa-4779-9a54-590199535879",
+		"publisherId": "2b751376-c6b1-4652-b47b-0f5eea26f3f5",
+		"publisherDisplayName": "evondev",
+		"targetPlatform": "undefined",
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1693486520474,
+		"preRelease": false
+	}
+}

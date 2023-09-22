@@ -1,0 +1,128 @@
+{
+	"name": "evondev-snippets",
+	"displayName": "Evondev snippets",
+	"description": "Useful HTML CSS snippets for Frontend Developer",
+	"publisher": "evondev",
+	"version": "0.4.42",
+	"engines": {
+		"vscode": "^1.20.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/evondev/evondev-snippets"
+	},
+	"icon": "icon.png",
+	"categories": [
+		"Snippets"
+	],
+	"contributes": {
+		"snippets": [
+			{
+				"language": "css",
+				"path": "./snippets/snippets.code-snippets"
+			},
+			{
+				"language": "scss",
+				"path": "./snippets/snippets.code-snippets"
+			},
+			{
+				"language": "styled-css",
+				"path": "./snippets/snippets.code-snippets"
+			},
+			{
+				"language": "source.css.styled",
+				"path": "./snippets/snippets.code-snippets"
+			},
+			{
+				"language": "html",
+				"path": "./snippets/html.code-snippets"
+			},
+			{
+				"language": "html",
+				"path": "./snippets/ui.code-snippets"
+			},
+			{
+				"language": "javascript",
+				"path": "./snippets/javascriptreact.code-snippets"
+			},
+			{
+				"language": "javascriptreact",
+				"path": "./snippets/javascriptreact.code-snippets"
+			},
+			{
+				"language": "typescript",
+				"path": "./snippets/javascriptreact.code-snippets"
+			},
+			{
+				"language": "typescriptreact",
+				"path": "./snippets/javascriptreact.code-snippets"
+			},
+			{
+				"language": "javascriptreact",
+				"path": "./snippets/jsx.code-snippets"
+			},
+			{
+				"language": "typescriptreact",
+				"path": "./snippets/jsx.code-snippets"
+			},
+			{
+				"language": "jsx",
+				"path": "./snippets/jsx.code-snippets"
+			},
+			{
+				"language": "html",
+				"path": "./snippets/global.code-snippets"
+			},
+			{
+				"language": "javascript",
+				"path": "./snippets/global.code-snippets"
+			},
+			{
+				"language": "javascriptreact",
+				"path": "./snippets/global.code-snippets"
+			},
+			{
+				"language": "typescript",
+				"path": "./snippets/global.code-snippets"
+			},
+			{
+				"language": "typescriptreact",
+				"path": "./snippets/global.code-snippets"
+			},
+			{
+				"language": "jsx",
+				"path": "./snippets/global.code-snippets"
+			},
+			{
+				"language": "jsx-attr",
+				"path": "./snippets/global.code-snippets"
+			},
+			{
+				"language": "javascript",
+				"path": "./snippets/react.code-snippets"
+			},
+			{
+				"language": "javascriptreact",
+				"path": "./snippets/react.code-snippets"
+			},
+			{
+				"language": "typescript",
+				"path": "./snippets/react.code-snippets"
+			},
+			{
+				"language": "typescriptreact",
+				"path": "./snippets/react.code-snippets"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "ca374277-4561-4be2-8306-ec95f27d6808",
+		"publisherId": "2b751376-c6b1-4652-b47b-0f5eea26f3f5",
+		"publisherDisplayName": "evondev",
+		"targetPlatform": "undefined",
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1693560324972,
+		"preRelease": false
+	}
+}

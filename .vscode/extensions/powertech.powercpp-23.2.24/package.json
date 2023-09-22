@@ -1,0 +1,1262 @@
+{
+	"name": "powercpp",
+	"displayName": "PowerTech C/C++",
+	"description": "Powerful C/C++ Extension for Modern Developers",
+	"version": "23.2.24",
+	"publisher": "PowerTech",
+	"author": {
+		"name": "PowerTech - https://powertech.center"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/powertech-center/vscode-cpp"
+	},
+	"bugs": {
+		"url": "https://github.com/powertech-center/vscode-cpp/issues"
+	},
+	"homepage": "https://powertech.center/clang",
+	"keywords": [
+		"C",
+		"C++",
+		"CPP",
+		"Clang",
+		"LLVM",
+		"LLDB",
+		"CMake",
+		"Ninja",
+		"GN",
+		"GYP"
+	],
+	"engines": {
+		"vscode": "^1.73.0"
+	},
+	"categories": [
+		"Programming Languages",
+		"Debuggers",
+		"Formatters",
+		"Linters",
+		"Snippets"
+	],
+	"icon": "images/icon.jpg",
+	"activationEvents": [
+		"workspaceContains:CMakeLists.txt",
+		"workspaceContains:BUILD.gn",
+		"workspaceContains:*.gyp",
+		"workspaceContains:build.ninja",
+		"workspaceContains:build.Makefile",
+		"workspaceContains:build.makefile",
+		"workspaceContains:build.GNUmakefile",
+		"onLanguage:c",
+		"onLanguage:cpp",
+		"onLanguage:cuda-cpp",
+		"onLanguage:objective-c",
+		"onLanguage:objective-cpp",
+		"onUri"
+	],
+	"main": "./dist/main.js",
+	"contributes": {
+		"languages": [
+			{
+				"id": "cmake",
+				"extensions": [
+					".cmake"
+				],
+				"filenames": [
+					"CMakeLists.txt"
+				],
+				"aliases": [
+					"CMake"
+				]
+			},
+			{
+				"id": "cmake-cache",
+				"filenames": [
+					"CMakeCache.txt"
+				],
+				"aliases": [
+					"CMake Cache"
+				]
+			},
+			{
+				"id": "gn",
+				"extensions": [
+					".gn",
+					".gni"
+				],
+				"configuration": "./language/gn-configuration.json",
+				"aliases": [
+					"GN"
+				]
+			},
+			{
+				"id": "gyp",
+				"extensions": [
+					".gyp",
+					".gypi"
+				],
+				"aliases": [
+					"GYP"
+				]
+			},
+			{
+				"id": "ninja",
+				"extensions": [
+					".ninja"
+				],
+				"configuration": "./languages/ninja-configuration.json",
+				"aliases": [
+					"Ninja"
+				]
+			},
+			{
+				"id": "makefile",
+				"filenames": [
+					"Makefile",
+					"makefile",
+					"GNUmakefile"
+				],
+				"firstLine": "^#!\\s*/usr/bin/make",
+				"configuration": "./language/make-configuration.json",
+				"aliases": [
+					"Makefile"
+				]
+			},
+			{
+				"id": "llvm.disassembly",
+				"extensions": [
+					".disasm"
+				],
+				"aliases": [
+					"Disassembly"
+				]
+			}
+		],
+		"grammars": [
+			{
+				"language": "cmake",
+				"scopeName": "source.cmake",
+				"path": "./languages/CMake.tmLanguage"
+			},
+			{
+				"language": "cmake-cache",
+				"scopeName": "source.cmakecache",
+				"path": "./languages/CMakeCache.tmLanguage"
+			},
+			{
+				"language": "gn",
+				"scopeName": "source.gn",
+				"path": "./languages/GN.tmLanguage.json"
+			},
+			{
+				"language": "ninja",
+				"scopeName": "source.ninja",
+				"path": "./languages/ninja.tmLanguage"
+			},
+			{
+				"language": "makefile",
+				"scopeName": "source.makefile",
+				"path": "./languages/make.tmLanguage.json",
+				"tokenTypes": {
+					"string.interpolated": "other"
+				}
+			},
+			{
+				"language": "llvm.disassembly",
+				"scopeName": "source.disassembly",
+				"path": "./languages/disassembly.json"
+			}
+		],
+		"commands": [
+			{
+				"category": "C/C++",
+				"command": "cpp.buildDebug",
+				"title": "Build CMAKE_BUILD_TYPE=Debug"
+			},
+			{
+				"category": "GN",
+				"command": "cpp.gnClean",
+				"title": "Clean"
+			},
+			{
+				"category": "GN",
+				"command": "cpp.gnRelease",
+				"title": "Build Release"
+			},
+			{
+				"category": "GN",
+				"command": "cpp.gnDebug",
+				"title": "Debug after build Debug"
+			},
+			{
+				"category": "GYP",
+				"command": "cpp.gypClean",
+				"title": "Clean"
+			},
+			{
+				"category": "GYP",
+				"command": "cpp.gypRelease",
+				"title": "Build Release"
+			},
+			{
+				"category": "GYP",
+				"command": "cpp.gypDebug",
+				"title": "Debug after build Debug"
+			},
+			{
+				"category": "Ninja",
+				"command": "cpp.ninjaClean",
+				"title": "Clean"
+			},
+			{
+				"category": "Ninja",
+				"command": "cpp.ninjaRelease",
+				"title": "Build Release"
+			},
+			{
+				"category": "Ninja",
+				"command": "cpp.ninjaDebug",
+				"title": "Debug after build Debug"
+			},
+			{
+				"category": "Makefile",
+				"command": "cpp.makefileClean",
+				"title": "Clean"
+			},
+			{
+				"category": "Makefile",
+				"command": "cpp.makefileRelease",
+				"title": "Build Release"
+			},
+			{
+				"category": "Makefile",
+				"command": "cpp.makefileDebug",
+				"title": "Debug after build Debug"
+			},
+			{
+				"category": "C/C++",
+				"command": "cpp.switchheadersource",
+				"title": "Switch Between Source/Header"
+			},
+			{
+				"category": "C/C++",
+				"command": "cpp.lsprestart",
+				"title": "Restart language server"
+			},
+			{
+				"category": "C/C++",
+				"command": "cpp.typeHierarchy",
+				"title": "Open Type Hierarchy"
+			},
+			{
+				"category": "C/C++",
+				"command": "cpp.typeHierarchy.viewParents",
+				"title": "Types: Show Base Classes",
+				"icon": "$(triangle-up)"
+			},
+			{
+				"category": "C/C++",
+				"command": "cpp.typeHierarchy.viewChildren",
+				"title": "Types: Show Derived Classes",
+				"icon": "$(triangle-down)"
+			},
+			{
+				"category": "C/C++",
+				"command": "cpp.typeHierarchy.close",
+				"title": "Types: Close Hierarchy",
+				"icon": "$(panel-close)"
+			},
+			{
+				"category": "C/C++",
+				"command": "cpp.memoryUsage",
+				"title": "Show memory usage",
+				"enablement": "cpp.memoryUsage.supported",
+				"icon": "$(refresh)"
+			},
+			{
+				"category": "C/C++",
+				"command": "cpp.memoryUsage.close",
+				"title": "Close memory usage",
+				"icon": "$(panel-close)"
+			},
+			{
+				"category": "C/C++",
+				"command": "cpp.ast",
+				"title": "Show AST",
+				"enablement": "cpp.ast.supported",
+				"icon": "$(list-tree)"
+			},
+			{
+				"category": "C/C++",
+				"command": "cpp.ast.close",
+				"title": "Close AST",
+				"icon": "$(panel-close)"
+			},
+			{
+				"category": "Debug",
+				"title": "Copy Value",
+				"command": "cpp.dbgModules.copyValue"
+			},
+			{
+				"category": "Debug",
+				"title": "Open LLDB terminal",
+				"command": "cpp.dbgOpenTerminal"
+			},
+			{
+				"category": "Debug",
+				"title": "Search Symbols...",
+				"command": "cpp.dbgSearchSymbols",
+				"enablement": "debugType == 'powercpp'"
+			},
+			{
+				"category": "Debug",
+				"title": "View Memory...",
+				"command": "cpp.dbgViewMemory",
+				"enablement": "debugType == 'powercpp'"
+			}
+		],
+		"taskDefinitions": [
+			{
+				"type": "cmake",
+				"required": [
+					"command"
+				],
+				"properties": {
+					"label": {
+						"type": "string",
+						"description": "%cmake-tools.taskDefinitions.properties.label.description%"
+					},
+					"command": {
+						"type": "string",
+						"enum": [
+							"build",
+							"configure",
+							"install",
+							"test",
+							"clean",
+							"cleanRebuild"
+						],
+						"description": "%cmake-tools.taskDefinitions.properties.command.description%"
+					},
+					"targets": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						},
+						"description": "%cmake-tools.taskDefinitions.properties.targets.description%"
+					},
+					"preset": {
+						"type": "string",
+						"description": "%cmake-tools.taskDefinitions.properties.preset.description%"
+					},
+					"options": {
+						"type": "object",
+						"description": "%cmake-tools.taskDefinitions.properties.options.description",
+						"properties": {
+							"cwd": {
+								"type": "string",
+								"description": "%cmake-tools.taskDefinitions.properties.options.cwd.description%"
+							},
+							"environment": {
+								"type": "object",
+								"markdownDescription": "%cmake-tools.taskDefinitions.properties.options.environment.markdownDescription%"
+							}
+						}
+					},
+					"detail": {
+						"type": "string",
+						"description": "%cmake-tools.taskDefinitions.properties.details.description%"
+					}
+				}
+			}
+		],
+		"keybindings": [
+			{
+				"command": "cpp.switchheadersource",
+				"key": "Alt+o",
+				"when": "editorTextFocus"
+			},
+			{
+				"command": "cpp.typeHierarchy",
+				"key": "Shift+Alt+t",
+				"when": "editorTextFocus"
+			}
+		],
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "cpp__viewContainer",
+					"title": "C/C++",
+					"icon": "images/cpp.svg"
+				}
+			]
+		},
+		"views": {
+			"cpp__viewContainer": [
+				{
+					"id": "cpp.projects",
+					"name": "Projects"
+				}
+			],
+			"explorer": [
+				{
+					"id": "cpp.typeHierarchyView",
+					"name": "Type Hierarchy",
+					"when": "cpp.typeHierarchyVisible"
+				},
+				{
+					"id": "cpp.memoryUsage",
+					"name": "Show Memory Usage",
+					"when": "cpp.memoryUsage.hasData"
+				},
+				{
+					"id": "cpp.ast",
+					"name": "AST",
+					"when": "cpp.ast.hasData"
+				}
+			],
+			"debug": [
+				{
+					"id": "loadedModules",
+					"name": "Modules",
+					"when": "debugType == 'powercpp'"
+				}
+			]
+		},
+		"menus": {
+			"editor/context": [
+				{
+					"command": "cpp.typeHierarchy",
+					"when": "resourceLangId == cpp && cpp.enableTypeHierarchy",
+					"group": "0_navigation@4",
+					"_comment": "see https://github.com/microsoft/vscode-references-view/blob/f63eaed9934ca5ecc8f3fb3ca096f38c6e5e181f/package.json#L162"
+				},
+				{
+					"command": "cpp.switchheadersource",
+					"when": "resourceLangId == c || resourceLangId == cpp || resourceLangId == cuda-cpp || resourceLangId == objective-c || resourceLangId == objective-cpp",
+					"group": "0_navigation@5"
+				},
+				{
+					"command": "cpp.ast",
+					"when": "cpp.ast.supported"
+				}
+			],
+			"view/title": [
+				{
+					"command": "cpp.typeHierarchy.viewParents",
+					"when": "view == cpp.typeHierarchyView",
+					"group": "navigation"
+				},
+				{
+					"command": "cpp.typeHierarchy.viewChildren",
+					"when": "view == cpp.typeHierarchyView",
+					"group": "navigation"
+				},
+				{
+					"command": "cpp.typeHierarchy.close",
+					"when": "view == cpp.typeHierarchyView",
+					"group": "navigation"
+				},
+				{
+					"command": "cpp.memoryUsage.close",
+					"when": "view == cpp.memoryUsage",
+					"group": "navigation"
+				},
+				{
+					"command": "cpp.memoryUsage",
+					"when": "view == cpp.memoryUsage",
+					"group": "navigation"
+				},
+				{
+					"command": "cpp.ast.close",
+					"when": "view == cpp.ast",
+					"group": "navigation"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "cpp.dbgModules.copyValue",
+					"when": "viewItem == cpp.dbgModuleProperty"
+				}
+			],
+			"editor/title/context": [],
+			"editor/title": [],
+			"explorer/context": [],
+			"touchBar": [],
+			"commandPalette": [
+				{
+					"command": "cpp.switchheadersource",
+					"when": "false"
+				},
+				{
+					"command": "cpp.lsprestart",
+					"when": "false"
+				},
+				{
+					"command": "cpp.typeHierarchy.viewParents",
+					"when": "resourceLangId == cpp"
+				},
+				{
+					"command": "cpp.typeHierarchy.viewChildren",
+					"when": "resourceLangId == cpp"
+				},
+				{
+					"command": "cpp.typeHierarchy.close",
+					"when": "false"
+				},
+				{
+					"command": "cpp.memoryUsage",
+					"when": "cpp.memoryUsage.supported"
+				},
+				{
+					"command": "cpp.memoryUsage.close",
+					"when": "false"
+				},
+				{
+					"command": "cpp.ast",
+					"when": "resourceLangId == cpp"
+				},
+				{
+					"command": "cpp.ast.close",
+					"when": "false"
+				},
+				{
+					"command": "cpp.dbgModules.copyValue",
+					"when": "viewItem == cpp.dbgModuleProperty"
+				}
+			]
+		},
+		"breakpoints": [
+			{
+				"language": "c"
+			},
+			{
+				"language": "cpp"
+			},
+			{
+				"language": "objective-c"
+			},
+			{
+				"language": "objective-cpp"
+			},
+			{
+				"language": "llvm.disassembly"
+			}
+		],
+		"configuration": {
+			"title": "C/C++",
+			"properties": {
+				"cpp.path": {
+					"type": "string",
+					"description": "C/C++ binaries path. By default, the global search for the compiler and other utilities is used."
+				},
+				"cpp.LSP_args": {
+					"type": "array",
+					"default": [],
+					"items": {
+						"type": "string"
+					},
+					"description": "Arguments for language server."
+				},
+				"cpp.dbgAdapterEnv": {
+					"description": "Extra environment variables for the debug adapter.",
+					"type": "object",
+					"patternProperties": {
+						".*": {
+							"type": "string"
+						}
+					},
+					"default": {},
+					"scope": "resource"
+				},
+				"cpp.dbgAdapterVerbose": {
+					"description": "Turns on verbose debug adapter logging.",
+					"type": "boolean",
+					"default": false,
+					"scope": "resource"
+				}
+			}
+		},
+		"debuggers": [
+			{
+				"type": "powercpp",
+				"label": "PowerTech C/C++ Debugger",
+				"languages": [
+					"c",
+					"cpp",
+					"objective-c",
+					"objective-cpp"
+				],
+				"configurationAttributes": {
+					"launch": {
+						"properties": {
+							"build": {
+								"description": "Build mode, which determines the size, composition of debug information, and other compiler options.",
+								"type": "string",
+								"enum": [
+									"debug",
+									"debug+",
+									"release",
+									"release+",
+									"trace",
+									"trace+",
+									"minimize",
+									"minimize+"
+								],
+								"enumDescriptions": [
+									"Debug mode: increased binaries size, full debugging capabilities",
+									"Advanced debug mode: increased binaries size, full debugging capabilities",
+									"Release mode: compact size, very high speed, no debug information",
+									"Advanced release mode: compact size, very high speed, no debug information",
+									"Trace mode: medium size, high speed, basic debug information",
+									"Advanced trace mode: medium size, high speed, basic debug information",
+									"Minimize mode: minimal size, very high speed, no debug information",
+									"Advanced minimize mode: minimal size, very high speed, no debug information"
+								]
+							},
+							"target": {
+								"description": "Platform and target program for build system.",
+								"type": "string",
+								"default": ""
+							},
+							"program": {
+								"description": "Path to the program to debug.",
+								"type": "string",
+								"default": ""
+							},
+							"args": {
+								"description": "Program arguments.",
+								"type": [
+									"array",
+									"string"
+								],
+								"default": []
+							},
+							"cwd": {
+								"description": "Program working directory.",
+								"type": "string",
+								"default": "${workspaceFolder}"
+							},
+							"env": {
+								"description": "Additional environment variables.",
+								"type": "object",
+								"patternProperties": {
+									".*": {
+										"type": "string"
+									}
+								},
+								"default": {}
+							},
+							"stdio": {
+								"description": "Destination for stdio streams: null = send to debugger console or a terminal, \"<path>\" = attach to a file/tty/fifo.",
+								"type": [
+									"null",
+									"string",
+									"array",
+									"object"
+								],
+								"default": null
+							},
+							"terminal": {
+								"description": "Terminal type to use.",
+								"type": "string",
+								"enum": [
+									"integrated",
+									"external",
+									"console"
+								],
+								"enumDescriptions": [
+									"Use integrated terminal in VSCode.",
+									"Use external terminal window.",
+									"Use VScode Debug Console for stdout and stderr. Stdin will be unavailable."
+								],
+								"default": "integrated"
+							},
+							"console": {
+								"description": "Terminal type to use. (This setting is a compatibility alias of 'terminal'.)",
+								"type": "string",
+								"enum": [
+									"integratedTerminal",
+									"externalTerminal",
+									"internalConsole"
+								],
+								"enumDescriptions": [
+									"Use integrated terminal in VSCode.",
+									"Use external terminal window.",
+									"Use VScode Debug Console for stdout and stderr. Stdin will be unavailable."
+								]
+							},
+							"stopOnEntry": {
+								"description": "Automatically stop debuggee after launch.",
+								"type": "boolean",
+								"default": true
+							},
+							"initCommands": {
+								"description": "Initialization commands executed upon debugger startup.",
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"default": []
+							},
+							"preRunCommands": {
+								"description": "Commands executed just before the program is launched.",
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"default": []
+							},
+							"postRunCommands": {
+								"description": "Commands executed just after the program has been launched.",
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"default": []
+							},
+							"exitCommands": {
+								"description": "Commands executed at the end of debugging session.",
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"default": []
+							},
+							"expressions": {
+								"description": "The default evaluator type used for expressions.",
+								"type": "string",
+								"enum": [
+									"simple",
+									"python",
+									"native"
+								]
+							},
+							"sourceMap": {
+								"description": "Source path remapping between the build machine and the local machine.  Each item is a pair of remote and local path prefixes.",
+								"type": "object",
+								"patternProperties": {
+									".*": {
+										"type": [
+											"string",
+											"null"
+										]
+									}
+								},
+								"default": {}
+							},
+							"relativePathBase": {
+								"description": "Base directory used for resolution of relative source paths.  Defaults to \"${workspaceFolder}\".",
+								"type": "string"
+							},
+							"sourceLanguages": {
+								"description": "A list of source languages to enable language-specific features for.",
+								"type": "array",
+								"default": []
+							},
+							"reverseDebugging": {
+								"description": "Enable reverse debugging (Requires reverse execution support in the debug server, see User's Manual for details).",
+								"type": "boolean",
+								"default": false
+							}
+						}
+					},
+					"attach": {
+						"properties": {
+							"program": {
+								"description": "Path to the program to attach to.",
+								"type": "string"
+							},
+							"pid": {
+								"description": "Process id to attach to.",
+								"type": [
+									"number",
+									"string"
+								],
+								"default": "${command:pickMyProcess}"
+							},
+							"stopOnEntry": {
+								"description": "Automatically stop debuggee after attach.",
+								"type": "boolean",
+								"default": true
+							},
+							"waitFor": {
+								"description": "Wait for the process to launch (MacOS only).",
+								"type": "boolean",
+								"default": true
+							},
+							"initCommands": {
+								"description": "Initialization commands executed upon debugger startup.",
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"default": []
+							},
+							"preRunCommands": {
+								"description": "Commands executed just before the program is attached to.",
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"default": []
+							},
+							"postRunCommands": {
+								"description": "Commands executed just after the program has been attached to.",
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"default": []
+							},
+							"exitCommands": {
+								"description": "Commands executed at the end of debugging session.",
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"default": []
+							},
+							"expressions": {
+								"description": "The default evaluator type used for expressions.",
+								"type": "string",
+								"enum": [
+									"simple",
+									"python",
+									"native"
+								]
+							},
+							"sourceMap": {
+								"description": "Source path remapping between the build machine and the local machine.  Each item is a pair of remote and local path prefixes.",
+								"type": "object",
+								"patternProperties": {
+									".*": {
+										"type": [
+											"string",
+											"null"
+										]
+									}
+								},
+								"default": {}
+							},
+							"sourceLanguages": {
+								"description": "A list of source languages to enable language-specific features for.",
+								"type": "array",
+								"default": []
+							},
+							"reverseDebugging": {
+								"description": "Enable reverse debugging (Requires reverse execution support in the debug server, see User's Manual for details).",
+								"type": "boolean",
+								"default": false
+							}
+						}
+					},
+					"custom": {
+						"properties": {
+							"initCommands": {
+								"description": "Initialization commands executed upon debugger startup.",
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"default": []
+							},
+							"targetCreateCommands": {
+								"description": "Commands that create a debug target.",
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"default": []
+							},
+							"processCreateCommands": {
+								"description": "Commands that create debuggee process.",
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"default": []
+							},
+							"exitCommands": {
+								"description": "Commands executed at the end of debugging session.",
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"default": []
+							},
+							"expressions": {
+								"description": "The default evaluator type used for expressions.",
+								"type": "string",
+								"enum": [
+									"simple",
+									"python",
+									"native"
+								]
+							},
+							"sourceMap": {
+								"description": "Source path remapping between the build machine and the local machine.  Each item is a pair of remote and local path prefixes.",
+								"type": "object",
+								"patternProperties": {
+									".*": {
+										"type": [
+											"string",
+											"null"
+										]
+									}
+								},
+								"default": {}
+							},
+							"relativePathBase": {
+								"description": "Base directory used for resolution of relative source paths.  Defaults to \"${workspaceFolder}\".",
+								"type": "string"
+							},
+							"sourceLanguages": {
+								"description": "A list of source languages to enable language-specific features for.",
+								"type": "array",
+								"default": []
+							},
+							"reverseDebugging": {
+								"description": "Enable reverse debugging (Requires reverse execution support in the debug server, see User's Manual for details).",
+								"type": "boolean",
+								"default": false
+							}
+						}
+					}
+				},
+				"configurationSnippets": [
+					{
+						"label": "C/C++: Debug Auto",
+						"description": "Launch a new instance of the automatically identified program.",
+						"body": {
+							"name": "Debug",
+							"type": "powercpp",
+							"request": "launch"
+						}
+					},
+					{
+						"label": "C/C++: Debug Program",
+						"description": "Launch a new instance of the specified program.",
+						"body": {
+							"name": "Debug",
+							"type": "powercpp",
+							"request": "launch",
+							"program": "^\"\\${workspaceFolder}/${1:<program>}\"",
+							"args": [],
+							"cwd": "^\"\\${workspaceFolder}\""
+						}
+					},
+					{
+						"label": "C/C++: Debug running program by Path",
+						"description": "Attach to a running instance of the specified program.",
+						"body": {
+							"name": "Attach",
+							"type": "powercpp",
+							"request": "attach",
+							"program": "^\"\\${workspaceFolder}/${1:<program>}\""
+						}
+					},
+					{
+						"label": "C/C++: Debug running program by PID",
+						"description": "Attach to a running process with the specified process id.",
+						"body": {
+							"name": "Attach PID",
+							"type": "powercpp",
+							"request": "attach",
+							"pid": "^\"\\${command:pickMyProcess}\" // use \\${command:pickProcess} to pick other users' processes"
+						}
+					}
+				]
+			},
+			{
+				"type": "powercpp__",
+				"label": "PowerTech C/C++ Debugger (Experimental)",
+				"languages": [
+					"c",
+					"cpp",
+					"objective-c",
+					"objective-cpp"
+				],
+				"program": "./thirdparty/lldb/lldb-vscode",
+				"windows": {
+					"program": "./thirdparty/lldb/lldb-vscode.exe"
+				},
+				"configurationAttributes": {
+					"launch": {
+						"properties": {
+							"build": {
+								"description": "Build mode, which determines the size, composition of debug information, and other compiler options.",
+								"type": "string",
+								"enum": [
+									"debug",
+									"debug+",
+									"release",
+									"release+",
+									"trace",
+									"trace+",
+									"minimize",
+									"minimize+"
+								],
+								"enumDescriptions": [
+									"Debug mode: increased binaries size, full debugging capabilities",
+									"Advanced debug mode: increased binaries size, full debugging capabilities",
+									"Release mode: compact size, very high speed, no debug information",
+									"Advanced release mode: compact size, very high speed, no debug information",
+									"Trace mode: medium size, high speed, basic debug information",
+									"Advanced trace mode: medium size, high speed, basic debug information",
+									"Minimize mode: minimal size, very high speed, no debug information",
+									"Advanced minimize mode: minimal size, very high speed, no debug information"
+								]
+							},
+							"target": {
+								"description": "Platform and target program for build system.",
+								"type": "string",
+								"default": ""
+							},
+							"program": {
+								"type": "string",
+								"description": "Path to the program to debug.",
+								"default": ""
+							},
+							"args": {
+								"type": [
+									"array",
+									"string"
+								],
+								"description": "Program arguments.",
+								"default": []
+							},
+							"cwd": {
+								"type": "string",
+								"description": "Program working directory.",
+								"default": "${workspaceRoot}"
+							},
+							"env": {
+								"type": "array",
+								"description": "Additional environment variables to set when launching the program. This is an array of strings that contains the variable name followed by an optional '=' character and the environment variable's value. Example:  [\"FOO=BAR\", \"BAZ\"]",
+								"default": []
+							},
+							"stopOnEntry": {
+								"type": "boolean",
+								"description": "Automatically stop after launch.",
+								"default": false
+							},
+							"disableASLR": {
+								"type": "boolean",
+								"description": "Enable or disable Address space layout randomization if the debugger supports it.",
+								"default": true
+							},
+							"disableSTDIO": {
+								"type": "boolean",
+								"description": "Don't retrieve STDIN, STDOUT and STDERR as the program is running.",
+								"default": false
+							},
+							"shellExpandArguments": {
+								"type": "boolean",
+								"description": "Expand program arguments as a shell would without actually launching the program in a shell.",
+								"default": false
+							},
+							"detachOnError": {
+								"type": "boolean",
+								"description": "Detach from the program.",
+								"default": false
+							},
+							"sourcePath": {
+								"type": "string",
+								"description": "Specify a source path to remap \"./\" to allow full paths to be used when setting breakpoints in binaries that have relative source paths."
+							},
+							"sourceMap": {
+								"type": "array",
+								"description": "Specify an array of path remappings; each element must itself be a two element array containing a source and destination pathname. Overrides sourcePath.",
+								"default": []
+							},
+							"debuggerRoot": {
+								"type": "string",
+								"description": "Specify a working directory to set the debug adaptor to so relative object files can be located."
+							},
+							"targetTriple": {
+								"type": "string",
+								"description": "Triplet of the target architecture to override value derived from the program file."
+							},
+							"platformName": {
+								"type": "string",
+								"description": "Name of the execution platform to override value derived from the program file."
+							},
+							"initCommands": {
+								"type": "array",
+								"description": "Initialization commands executed upon debugger startup.",
+								"default": []
+							},
+							"preRunCommands": {
+								"type": "array",
+								"description": "Commands executed just before the program is launched.",
+								"default": []
+							},
+							"postRunCommands": {
+								"type": "array",
+								"description": "Commands executed just as soon as the program is successfully launched when it's in a stopped state prior to any automatic continuation.",
+								"default": []
+							},
+							"launchCommands": {
+								"type": "array",
+								"description": "Custom commands that are executed instead of launching a process. A target will be created with the launch arguments prior to executing these commands. The commands may optionally create a new target and must perform a launch. A valid process must exist after these commands complete or the \"launch\" will fail. Launch the process with \"process launch -s\" to make the process to at the entry point since lldb-vscode will auto resume if necessary.",
+								"default": []
+							},
+							"stopCommands": {
+								"type": "array",
+								"description": "Commands executed each time the program stops.",
+								"default": []
+							},
+							"exitCommands": {
+								"type": "array",
+								"description": "Commands executed at the end of debugging session.",
+								"default": []
+							},
+							"runInTerminal": {
+								"type": "boolean",
+								"description": "Launch the program inside an integrated terminal in the IDE. Useful for debugging interactive command line programs",
+								"default": false
+							},
+							"timeout": {
+								"type": "string",
+								"description": "The time in seconds to wait for a program to stop at entry point when launching with \"launchCommands\". Defaults to 30 seconds."
+							}
+						}
+					},
+					"attach": {
+						"properties": {
+							"program": {
+								"type": "string",
+								"description": "Path to the program to attach to."
+							},
+							"pid": {
+								"type": [
+									"number",
+									"string"
+								],
+								"description": "System process ID to attach to."
+							},
+							"waitFor": {
+								"type": "boolean",
+								"description": "If set to true, then wait for the process to launch by looking for a process with a basename that matches `program`. No process ID needs to be specified when using this flag.",
+								"default": true
+							},
+							"sourcePath": {
+								"type": "string",
+								"description": "Specify a source path to remap \"./\" to allow full paths to be used when setting breakpoints in binaries that have relative source paths."
+							},
+							"sourceMap": {
+								"type": "array",
+								"description": "Specify an array of path remappings; each element must itself be a two element array containing a source and destination pathname. Overrides sourcePath.",
+								"default": []
+							},
+							"debuggerRoot": {
+								"type": "string",
+								"description": "Specify a working directory to set the debug adaptor to so relative object files can be located."
+							},
+							"targetTriple": {
+								"type": "string",
+								"description": "Triplet of the target architecture to override value derived from the program file."
+							},
+							"platformName": {
+								"type": "string",
+								"description": "Name of the execution platform to override value derived from the program file."
+							},
+							"attachCommands": {
+								"type": "array",
+								"description": "Custom commands that are executed instead of attaching to a process ID or to a process by name. These commands may optionally create a new target and must perform an attach. A valid process must exist after these commands complete or the \"attach\" will fail.",
+								"default": []
+							},
+							"initCommands": {
+								"type": "array",
+								"description": "Initialization commands executed upon debugger startup.",
+								"default": []
+							},
+							"preRunCommands": {
+								"type": "array",
+								"description": "Commands executed just before the program is attached to.",
+								"default": []
+							},
+							"postRunCommands": {
+								"type": "array",
+								"description": "Commands executed just as soon as the program is successfully attached when it's in a stopped state prior to any automatic continuation.",
+								"default": []
+							},
+							"stopCommands": {
+								"type": "array",
+								"description": "Commands executed each time the program stops.",
+								"default": []
+							},
+							"exitCommands": {
+								"type": "array",
+								"description": "Commands executed at the end of debugging session.",
+								"default": []
+							},
+							"coreFile": {
+								"type": "string",
+								"description": "Path to the core file to debug."
+							},
+							"timeout": {
+								"type": "string",
+								"description": "The time in seconds to wait for a program to stop when attaching using \"attachCommands\". Defaults to 30 seconds."
+							}
+						}
+					}
+				}
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run package",
+		"compile": "webpack",
+		"watch": "webpack --watch",
+		"package": "webpack --mode production --devtool hidden-source-map",
+		"compile-tests": "tsc -p . --outDir out",
+		"watch-tests": "tsc -p . -w --outDir out",
+		"pretest": "npm run compile-tests && npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/ajv": "^0.0.5",
+		"@types/glob": "^8.0.0",
+		"@types/json5": "~0.0.30",
+		"@types/mocha": "^10.0.0",
+		"@types/node": "~14.14.28",
+		"@types/vscode": "^1.73.0",
+		"@types/yauzl": "^2.10.0",
+		"@typescript-eslint/eslint-plugin": "^5.42.0",
+		"@typescript-eslint/parser": "^5.42.0",
+		"@vscode/debugadapter-testsupport": "^1.51.0",
+		"@vscode/debugprotocol": "^1.53.0",
+		"@vscode/test-electron": "^2.2.0",
+		"eslint": "^8.26.0",
+		"glob": "^8.0.3",
+		"ts-loader": "^9.4.1",
+		"typescript": "^4.8.4",
+		"vscode-nls-dev": "^3.3.2",
+		"webpack": "^5.74.0",
+		"webpack-cli": "^4.10.0"
+	},
+	"dependencies": {
+		"abort-controller": "^3.0.0",
+		"ajv": "^7.1.0",
+		"json5": "^2.2.0",
+		"open": "^7.4.1",
+		"string-argv": "^0.3.1",
+		"vscode-languageclient": "8.0.2",
+		"vscode-nls": "^5.0.0",
+		"vscode-tas-client": "^0.1.22",
+		"yaml": "^1.10.0",
+		"yauzl": "^2.10.0"
+	},
+	"__metadata": {
+		"id": "48dde94d-4e6c-42da-b244-91b273324831",
+		"publisherId": "8e62eb85-d5a4-4caf-a399-860f02358918",
+		"publisherDisplayName": "PowerTech",
+		"targetPlatform": "undefined",
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1693524279428,
+		"preRelease": false
+	}
+}

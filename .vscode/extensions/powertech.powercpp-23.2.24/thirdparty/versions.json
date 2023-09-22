@@ -1,0 +1,10 @@
+{
+  "Extension": "23.2.24",
+  "local": {
+    "PowerLLDB": "15.0.1",
+    "CodeLLDB": "1.8.1",
+    "GN": "2082",
+    "Ninja": "1.11.1",
+    "CMake": "3.26.0-rc4"
+  }
+}
