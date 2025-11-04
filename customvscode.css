@@ -1,28 +1,51 @@
 /* ======================================================================================== */
 /* ============================== CUSTOM CSS FILE FOR VSCODE ============================== */
-/* ========================INSTALL CUSTOM CSS AND JS LOADER EXTENSION====================== */
 /* ======================================================================================== */
 
 /* ============================== CUSOR GRADIENT ============================== */
-.monaco-editor .cursors-layer .cursor,
-.monaco-editor .cursor,
-.cursors-layer .cursor {
-  background-image: linear-gradient(
-    245deg,
-    #fcb564,
-    #ff65f2,
-    #d66efd
-  ) !important;
-  background-origin: border-box !important;
-  background-clip: border-box !important;
-  width: 2px !important; /* đảm bảo đủ rộng để thấy gradient */
-  min-height: 1em !important; /* đảm bảo cao bằng dòng text */
-  border-radius: 2px !important; /* bo góc cho đẹp */
-  opacity: 1 !important;
-  pointer-events: none !important;
+/* gradient placed in a pseudo-element so it doesn't override VS Code's blink/expand animation */
+.monaco-workbench .monaco-editor .view-overlays .cursors-layer .cursor,
+.monaco-workbench .monaco-editor .cursors-layer .cursor {
+  position: relative !important;
+  background: transparent !important; /* don't override built-in cursor visuals */
+  -webkit-mask: none !important;
+  mask: none !important;
   box-shadow: none !important;
+  border-radius: 2px !important;
 }
-/* ============================================================================ */
+
+/* gradient layer (separate element so VS Code's cursorBlinking: "expand" still animates the cursor) */
+.monaco-workbench .monaco-editor .cursors-layer .cursor::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  height: 3em; /* make sure it covers the full height during expand animation */
+  border-radius: 2px;
+  background-image: linear-gradient(245deg, #fcb564, #ff65f2, #d66efd);
+  background-size: 200% 200%;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 0;
+  animation: cursorGradient 4s linear infinite;
+}
+
+/* some builds use an inner .caret element — make sure it doesn't cover the gradient */
+.monaco-workbench .monaco-editor .cursors-layer .cursor .caret {
+  background: transparent !important;
+}
+
+/* animated gradient for the pseudo-element only */
+@keyframes cursorGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
 /* ============================== CUSOR GRADIENT ============================== */
 /* cursors-layer .cursor {
@@ -109,16 +132,22 @@
   z-index: -1;
 }
 
-/* Chuyển động gradient */
+/* Chuyển động gradient - đổi màu theo chiều kim đồng hồ */
 @keyframes tabGlow {
   0% {
-    background-position: 0% 50%;
+    background-position: 50% 0%;
   }
-  50% {
+  25% {
     background-position: 100% 50%;
   }
-  100% {
+  50% {
+    background-position: 50% 100%;
+  }
+  75% {
     background-position: 0% 50%;
+  }
+  100% {
+    background-position: 50% 0%;
   }
 }
 /* ============================================================================ */
@@ -863,4 +892,3 @@ body > div[class*="Dracula-evondev-author"] :where(.mtk27) {
   font-family: "Zed mono";
 }
 /* ============================================================================ */
-
