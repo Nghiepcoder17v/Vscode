@@ -1,0 +1,864 @@
+/* ======================================================================================== */
+/* ============================== CUSTOM CSS FILE FOR VSCODE ============================== */
+/* ======================================================================================== */
+
+/* ============================== CUSOR GRADIENT ============================== */
+.monaco-editor .cursors-layer .cursor,
+.monaco-editor .cursor,
+.cursors-layer .cursor {
+  background-image: linear-gradient(
+    245deg,
+    #fcb564,
+    #ff65f2,
+    #d66efd
+  ) !important;
+  background-origin: border-box !important;
+  background-clip: border-box !important;
+  width: 2px !important; /* đảm bảo đủ rộng để thấy gradient */
+  min-height: 1em !important; /* đảm bảo cao bằng dòng text */
+  border-radius: 2px !important; /* bo góc cho đẹp */
+  opacity: 1 !important;
+  pointer-events: none !important;
+  box-shadow: none !important;
+}
+/* ============================================================================ */
+
+/* ============================== CUSOR GRADIENT ============================== */
+/* cursors-layer .cursor {
+  background-image: linear-gradient(
+    245deg,
+    #fcb564,
+    #ff65f2,
+    #d66efd
+  ) !important;
+} */
+/* ============================================================================ */
+
+/* ============================== VERTICAL SCROLLBAR ============================== */
+.editor-container .monaco-scrollable-element > .scrollbar.vertical > .slider {
+  background-image: linear-gradient(to top, #ffb86c, #ff6bcb);
+  width: 4px !important;
+}
+/* ============================================================================ */
+
+/* ============================== MY TAB CUSTOM CSS ============================== */
+:root {
+  --border-width: 3px;
+  --border-radius: 5px;
+}
+
+/* Tab đang được chọn */
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab.active {
+  position: relative !important;
+  overflow: hidden !important;
+  z-index: 1 !important;
+  border-radius: var(--border-radius);
+}
+
+/* Hiệu ứng viền động */
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab.active::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: var(--border-width);
+  border-radius: var(--border-radius);
+  background: linear-gradient(
+    120deg,
+    #fc6c8f,
+    #ff2ced,
+    #ffb86c,
+    #2cccff,
+    #20e3b2,
+    #c850c0,
+    #4158d0
+  );
+  background-size: 400% 400%;
+  animation: tabGlow 6s ease infinite;
+  box-shadow: 0 0 10px 2px rgba(255, 128, 255, 0.4); /* ánh sáng mờ */
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+}
+/* Nền tab */
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab.active::after {
+  content: "";
+  position: absolute;
+  inset: var(--border-width);
+  border-radius: calc(var(--border-radius) - var(--border-width));
+  background: var(--vscode-editor-background, #1e1e2e);
+  z-index: -1;
+}
+
+/* Chuyển động gradient */
+@keyframes tabGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/* ============================================================================ */
+
+/* ============================== GENERAL ============================== */
+/* :root {
+  --tab-gradient1: #407cff 318deg, #da8bff 1turn;
+  --tab-gradient2: #ff65f2 318deg, #fcb564 1turn;
+  --size: 1.5px;
+  --duration: 3s;
+  --general-gradient-secondary: #fcb564, #ff65f2, #ff69cf;
+  --ease: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+body
+  > div
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab {
+  border-right: 0 !important;
+}
+
+[class*="bracket-highlighting"] {
+  font: inherit !important;
+  font-family: "Inconsolata" !important;
+  font-size: calc(100% + 1px) !important;
+  font-weight: 400 !important;
+}
+
+.monaco-workbench
+  .activitybar
+  > .content
+  :not(.monaco-menu)
+  > .monaco-action-bar
+  .action-item.checked
+  .active-item-indicator:before {
+  border: 0;
+  width: 1.5px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(
+    to bottom,
+    var(--general-gradient-secondary)
+  );
+}
+
+.monaco-workbench
+  .activitybar
+  > .content
+  :not(.monaco-menu)
+  > .monaco-action-bar
+  .badge
+  .badge-content {
+  background-image: linear-gradient(45deg, var(--general-gradient-secondary));
+}
+.monaco-workbench .monaco-editor .cursors-layer .cursor {
+  background-image: linear-gradient(245deg, var(--general-gradient-secondary));
+}
+.monaco-workbench .monaco-editor .inline-folded:after {
+  content: "";
+}
+.tab-border-top-container {
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  padding: var(--size);
+  width: calc(100% - 1px) !important;
+  height: calc(100% - 1px) !important;
+  background-color: transparent !important;
+  border-radius: inherit;
+  box-sizing: border-box;
+}
+.tab-border-top-container:before {
+  content: "";
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  animation: spinner var(--duration) cubic-bezier(0.445, 0.05, 0.55, 0.95)
+    infinite;
+  background: conic-gradient(
+      from 0deg at 50% 51.35%,
+      rgba(185, 215, 243, 0) 0deg,
+      rgba(185, 215, 243, 0) 289.4deg,
+      var(--tab-gradient1)
+    ),
+    conic-gradient(
+      from 180deg at 50% 51.35%,
+      rgba(185, 215, 243, 0) 0deg,
+      rgba(185, 215, 243, 0) 287.46deg,
+      var(--tab-gradient2)
+    );
+  border-radius: inherit;
+}
+@keyframes spinner {
+  100% {
+    transform: translate(-50%, -50%) rotate(1turn);
+  }
+}
+
+.tab {
+  overflow: hidden;
+}
+.tab.active {
+  border-radius: 100px !important;
+  box-shadow: inset 0 1px 1px 0 rgba(199, 211, 234, 0.12),
+    inset 0 24px 48px 0 rgba(199, 211, 234, 0.05),
+    0 24px 32px 0 rgba(6, 6, 14, 0.7);
+} */
+/* ============================================================================ */
+
+/* ============================== ROUDED TAB ============================== */
+/* .tabs-container > .tab {
+  border-right: 0 !important;
+}
+.tabs-and-actions-container {
+  padding: 4px !important;
+}
+
+.tabs-container {
+  gap: 8px !important;
+}
+.tabs-container > .tab.active.tab-border-top > .tab-border-top-container {
+  --general-gradient-secondary: #fcb564, #ff65f2, #ff69cf;
+  height: 0.5px !important;
+  background-image: linear-gradient(
+    to right,
+    var(--general-gradient-secondary)
+  );
+  width: 50% !important;
+  left: 50% !important;
+  transform: translate3d(-50%, 0%, 0) !important;
+  top: -1px !important;
+}
+.tabs-container > .tab {
+  border-radius: 100px;
+  border-color: rgba(255, 255, 255, 0.12) rgb(25, 26, 33)
+    rgba(255, 255, 255, 0.12) rgba(255, 255, 255, 0.12);
+  border-style: solid;
+  border-width: 1px 0 0 0;
+} */
+/* ============================================================================ */
+
+/* ============================== ROUDED LINE NEON ============================== */
+/* .tab-border-bottom-container,
+.tab-border-top-container {
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  padding: 1.1px;
+  width: 100% !important;
+  height: calc(100% - 1px) !important;
+  background-color: transparent !important;
+  border-radius: inherit;
+  box-sizing: border-box;
+}
+.tab-border-bottom-container:before,
+.tab-border-top-container:before {
+  content: "";
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: spinner 3s cubic-bezier(0, 0.8, 0.95, 1) infinite;
+  background: conic-gradient(
+      from 0deg at 50% 51.35%,
+      rgba(185, 215, 243, 0) 0deg,
+      rgba(185, 215, 243, 0) 289.4deg,
+      #407cff 318deg,
+      #da8bff 1turn,
+      #fb7185 2turn
+    ),
+    conic-gradient(
+      from 180deg at 50% 51.35%,
+      rgba(185, 215, 243, 0) 0deg,
+      rgba(185, 215, 243, 0) 287.46deg,
+      #407cff 318deg,
+      #da8bff 1turn,
+      #fb7185 2turn
+    );
+  border-radius: inherit;
+}
+@keyframes spinner {
+  100% {
+    transform: translate(-50%, -50%) rotate(1turn);
+  }
+}
+.tab {
+  overflow: hidden;
+}
+.tab.active {
+  border-radius: 100px !important;
+  box-shadow: inset 0 1px 1px 0 rgba(199, 211, 234, 0.12),
+    inset 0 24px 48px 0 rgba(199, 211, 234, 0.05),
+    0 24px 32px 0 rgba(6, 6, 14, 0.7);
+} */
+/* ============================================================================ */
+
+/* ============================== NEON LINE ANIMATION ============================== */
+/* :root {
+  --line-width: 1px;
+  --line-color: #adbbff;
+  --start-angle: 0deg;
+  --delay: 0s;
+  --easing: linear;
+  --angle: 0deg;
+}
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+.tab.active {
+  border-radius: 20px !important;
+  box-shadow: inset 0 1px 1px 0 rgba(199, 211, 234, 0.12),
+    inset 0 24px 48px 0 rgba(199, 211, 234, 0.05),
+    0 24px 32px 0 rgba(6, 6, 14, 0.7);
+}
+.tab-border-top-container {
+  animation: spinner 6s var(--easing) infinite,
+    opacityz 3s var(--easing) infinite;
+  filter: drop-shadow(0 0 10px #adbbff);
+  width: 100% !important;
+  height: 100% !important;
+  background-color: transparent !important;
+  filter: drop-shadow(0 0 10px var(--line-color));
+  border-radius: inherit;
+}
+
+.tab-border-top-container:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: var(--line-width);
+  background: conic-gradient(
+    from calc(var(--angle) + var(--start-angle)),
+    transparent 0,
+    var(--line-color) 20%,
+    transparent 25%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: inherit;
+}
+@keyframes opacityz {
+  0% {
+    opacity: 0.75;
+  }
+
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.75;
+  }
+}
+@keyframes spinner {
+  100% {
+    --angle: 360deg;
+  }
+} */
+
+/* ============================================================================ */
+
+/* ============================== CUSTOM TAB GRADIENT ============================== */
+/* .monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container {
+  padding: 8px;
+  gap: 8px;
+}
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab.sizing-fit {
+  background-color: #21222c !important;
+  border-radius: 4px;
+}
+.tab.tab-actions-right.sizing-fit.has-icon.tab-border-top.active .tab-label {
+  position: relative;
+}
+.tab.tab-actions-right.sizing-fit.has-icon.tab-border-top.active:before {
+  content: "";
+  position: absolute;
+  background: #21222c;
+  top: 50%;
+  left: 50%;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  border-radius: inherit;
+  transform: translate(-50.1%, -50.1%);
+  border-radius: inherit;
+}
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab.sizing-fit.active {
+  background-image: linear-gradient(
+    45deg,
+    #fcb564,
+    #ff65f2,
+    #d66efd,
+    #6a5af9,
+    #2cccff,
+    #20e3b2
+  );
+}
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab.active.tab-border-top
+  > .tab-border-top-container {
+  display: none !important;
+} */
+/* ============================================================================ */
+
+/* ============================== CORNER GRADIENT ============================== */
+/* :root {
+  --size: 5px;
+}
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab.active.tab-border-top
+  > .tab-border-top-container {
+  width: 100%;
+  height: 100% !important;
+  top: 0;
+  left: 0;
+  background-color: transparent !important;
+}
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab.active.tab-border-top
+  > .tab-border-top-container:before,
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab.active.tab-border-top
+  > .tab-border-top-container:after {
+  content: "";
+  width: var(--size);
+  height: var(--size);
+  position: absolute;
+  border: 2px solid;
+  border-image-slice: 1;
+}
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab.active.tab-border-top
+  > .tab-border-top-container:before {
+  top: 0;
+  left: 0;
+  border-right: 0;
+  border-bottom: 0;
+  border-image-source: linear-gradient(-45deg, #4dd78a, #20e3b2);
+}
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab.active.tab-border-top
+  > .tab-border-top-container:after {
+  right: 0;
+  bottom: 0;
+  border-top: 0;
+  border-left: 0;
+  border-image-source: linear-gradient(-45deg, #6a5af9, #d66efd);
+}
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab.active:before,
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab.active:after {
+  content: "";
+  width: var(--size);
+  height: var(--size);
+  position: absolute;
+  border: 2px solid;
+  border-image-slice: 1;
+}
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab.active:before {
+  left: 0;
+  bottom: 0;
+  border-top: 0;
+  border-right: 0;
+  border-image-source: linear-gradient(-45deg, #fc6c8f, #ffb86c);
+}
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab.active:after {
+  top: 0;
+  right: 0;
+  border-left: 0;
+  border-bottom: 0;
+  border-image-source: linear-gradient(-45deg, #098dff, #2cccff);
+} */
+/* ============================================================================ */
+
+/* ============================== CENTER LINE GRADIENT ============================== */
+/* .tabs-container > .tab.active.tab-border-top > .tab-border-top-container {
+  height: 1px !important;
+  background-image: linear-gradient(
+    to right,
+    #00aefd,
+    #20e3b2,
+    #fcb564,
+    #ff65f2,
+    #ff69cf
+  );
+  width: 50% !important;
+  left: 50% !important;
+  transform: translate3d(-50%, 0%, 0) !important;
+  top: 0 !important;
+  background-size: 200% 200%;
+  animation: gradient 5s linear infinite;
+}
+.tabs-container > .tab {
+  border-radius: 0;
+  border-color: rgba(255, 255, 255, 0.12) rgb(25, 26, 33)
+    rgba(255, 255, 255, 0.12) rgba(255, 255, 255, 0.12);
+  border-style: solid;
+  border-width: 0;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+.tabs-container > .tab.active {
+  box-shadow: inset 0 -7px 11px #a48fff1f;
+  border-top-width: 1px;
+}
+.tabs-container > .tab:before {
+  content: "";
+  border-radius: inherit;
+  background: linear-gradient(
+    90.01deg,
+    rgba(229, 156, 255, 0.24) 0.01%,
+    rgba(186, 156, 255, 0.24) 50.01%,
+    rgba(156, 178, 255, 0.24) 100%
+  );
+  inset: 0;
+  position: absolute;
+  pointer-events: none;
+  --mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+} */
+/* ============================================================================ */
+
+/* ============================== BORDER TOP ANIMATION ============================== */
+/* .tabs-container > .tab.active.tab-border-top > .tab-border-top-container {
+  background-size: 400% 400% !important;
+  background-image: linear-gradient(
+    -45deg,
+    #fc6c8f,
+    #ff2ced,
+    #ffb86c,
+    #2cccff,
+    #20e3b2,
+    #ffcc70,
+    #c850c0,
+    #4158d0
+  ) !important;
+  animation: gradient 5s ease alternate infinite !important;
+  height: 3px !important;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+} */
+/* ============================================================================ */
+
+/* ============================== ANIMATE TAB BORDER LINE ============================== */
+/* .tabs-container > .tab.active.tab-border-top > .tab-border-top-container {
+  height: 1.5px !important;
+  background-image: linear-gradient(
+      90deg,
+      rgba(25, 26, 46, 1) 0%,
+      rgba(25, 26, 46, 0.12) 100%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(229, 71, 255, 0) 36.27%,
+      rgb(255, 71, 149) 71.37%,
+      rgb(255, 204, 71) 92.98%
+    ) !important;
+  animation: animate 3.5s linear infinite forwards !important;
+}
+.tabs-container > .tab {
+  overflow: hidden !important;
+}
+@keyframes animate {
+  from {
+    transform: translateX(-300px) translateZ(0px);
+  }
+  to {
+    transform: translateX(300px) translateZ(0px);
+  }
+} */
+/* ============================================================================ */
+
+/* ============================== 2 LINE ANIMATION ============================== */
+/* .tab-border-top-container {
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  padding: 1px;
+  width: 100% !important;
+  height: calc(100% - 3px) !important;
+  background-color: transparent !important;
+}
+.tab-border-top-container:before {
+  content: "";
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: spinner 5s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  background: conic-gradient(
+      from 0deg at 50% 51.35%,
+      rgba(185, 215, 243, 0) 0deg,
+      rgba(185, 215, 243, 0) 289.4deg,
+      #ffb86c 318.05deg,
+      #ff65f2 1turn
+    ),
+    conic-gradient(
+      from 180deg at 50% 51.35%,
+      rgba(185, 215, 243, 0) 0deg,
+      rgba(185, 215, 243, 0) 287.46deg,
+      #20e3b2 325.02deg,
+      #00aefd 1turn
+    );
+}
+@keyframes spinner {
+  100% {
+    transform: translate(-50%, -50%) rotate(1turn);
+  }
+} */
+/* ============================================================================ */
+
+/* ============================== EVONDEV DRACULA ============================== */
+:root {
+  --gradient-dir1: to top;
+  --gradient-dir2: to right;
+  --gradient-dir3: to left;
+  --gradient-dir4: to left;
+  --gradient-dir5: to top left;
+  --gradient-dir6: to left top;
+  --size: 5px;
+  --border-size: 2.5px;
+  --gradient-primary: #fcb564, #ff65f2, #d66efd;
+  --gradient-secondary: linear-gradient(245deg, #fcb564, #ff65f2);
+}
+body
+  > div[class*="Dracula-"]
+  :where(.mtk5, .mtk6, .mtk9, .mtk10, .mtk15, .mtk16, .mtk17, .mtk26) {
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+body > div[class*="Dracula-"] :where(.mtk10, .mtk15) {
+  background-image: linear-gradient(to bottom, #fc806c, #ff1bd1);
+}
+body > div[class*="Dracula-"] :where(.mtk5, .mtk26) {
+  background-image: linear-gradient(to right top, #4dd78a, #20e3b2);
+  -webkit-text-fill-color: transparent;
+  font-style: italic;
+}
+body > div[class*="Dracula-"] :where(.mtk26) {
+  font-style: italic;
+}
+body > div[class*="Dracula-"] :where(.mtk6, .mtk9, .mtk17) {
+  background-image: linear-gradient(to bottom, #00fdff, #2979ff);
+  -webkit-text-fill-color: transparent;
+  font-style: italic;
+}
+body > div[class*="Dracula-"] :where(.mtk16) {
+  background-image: linear-gradient(to bottom, #9a86fd, #6a5af9);
+}
+body > div[class*="Dracula-"] :where(.mtk3) {
+  color: #92b4d5;
+}
+
+body > div[class*="Dracula-"] :where(.mtk18, .mtk7) {
+  color: #cbdaff;
+}
+
+body > div[class*="Dracula-"] :where(.mtk13) {
+  color: white;
+}
+/* ============================================================================ */
+
+/* ============================== DRACULA AUTHOR ============================== */
+body
+  > div[class*="Dracula-evondev-author"]
+  :where(.mtk11, .mtk16, .mtk6, .mtk3, .mtk15) {
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body > div[class*="Dracula-evondev-author"] :where(.mtk26) {
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, #ff1bd1, #ff69cf, #ffb86c);
+  font-style: italic;
+}
+
+body > div[class*="Dracula-evondev-author"] :where(.mtk11) {
+  background-image: linear-gradient(to bottom, #fc806c, #ff1bd1);
+}
+body > div[class*="Dracula-evondev-author"] :where(.mtk6) {
+  background-image: linear-gradient(-45deg, #4dd78a, #20e3b2);
+}
+body > div[class*="Dracula-evondev-author"] :where(.mtk16) {
+  background-image: linear-gradient(to bottom, #00fdff, #2979ff);
+}
+body > div[class*="Dracula-evondev-author"] :where(.mtk3) {
+  background-image: linear-gradient(to bottom, #ffb86c, #ff979a);
+}
+
+body > div[class*="Dracula-evondev-author"] :where(.mtk15) {
+  background-image: linear-gradient(to bottom, #bd98ff, #978df8);
+}
+body
+  > div[class*="Dracula-evondev-author"]
+  :where(.mtk7, .mtk13, .mtk18, .mtk8) {
+  color: #cbdaff;
+}
+body > div[class*="Dracula-evondev-author"] .mtkb {
+  -webkit-font-smoothing: auto;
+  font-weight: normal;
+}
+body > div[class*="Dracula-evondev-author"] .view-line {
+  -webkit-font-smoothing: default;
+}
+.editor-instance[data-mode-id="markdown"] .view-line,
+.editor-instance[data-mode-id="plaintext"] .view-line {
+  font-family: "SF Mono", Arial, Helvetica, sans-serif;
+  font-size: 13px;
+}
+body > div[class*="Dracula-evondev-author"] :where(.mtk14) {
+  color: #cbdaff;
+}
+body > div[class*="Dracula-evondev-author"] :where(.mtk26) {
+  font-family: "SF mono";
+}
+body > div[class*="Dracula-evondev-author"] :where(.mtk27) {
+  font-family: "Zed mono";
+}
+/* ============================================================================ */
