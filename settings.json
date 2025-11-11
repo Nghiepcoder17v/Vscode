@@ -1,0 +1,257 @@
+{
+  "C_Cpp_Runner.cCompilerPath": "gcc",
+  "C_Cpp_Runner.cppCompilerPath": "g++",
+  "C_Cpp_Runner.debuggerPath": "gdb",
+  "C_Cpp_Runner.cStandard": "",
+  "C_Cpp_Runner.cppStandard": "",
+  "C_Cpp_Runner.msvcBatchPath": "",
+  "C_Cpp_Runner.useMsvc": true,
+  "C_Cpp_Runner.warnings": [
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "-Wshadow",
+    "-Wformat=2",
+    "-Wconversion",
+    "-Wnull-dereference",
+    "-Wsign-conversion"
+  ],
+  "C_Cpp_Runner.msvcWarnings": [
+    "/W4",
+    "/permissive-",
+    "/w14242",
+    "/w14287",
+    "/w14296",
+    "/w14311",
+    "/w14826",
+    "/w44062",
+    "/w44242",
+    "/w14905",
+    "/w14906",
+    "/w14263",
+    "/w44265",
+    "/w14928"
+  ],
+  "C_Cpp_Runner.enableWarnings": true,
+  "C_Cpp_Runner.warningsAsError": false,
+  "C_Cpp_Runner.compilerArgs": [],
+  "C_Cpp_Runner.linkerArgs": [],
+  "C_Cpp_Runner.includePaths": [],
+  "C_Cpp_Runner.includeSearch": ["*", "**/*"],
+  "C_Cpp_Runner.excludeSearch": [
+    "**/build",
+    "**/build/**",
+    "**/.*",
+    "**/.*/**",
+    "**/.vscode",
+    "**/.vscode/**"
+  ],
+  "C_Cpp_Runner.useAddressSanitizer": true,
+  "C_Cpp_Runner.useUndefinedSanitizer": false,
+  "C_Cpp_Runner.useLeakSanitizer": false,
+  "C_Cpp_Runner.showCompilationTime": false,
+  "C_Cpp_Runner.useLinkTimeOptimization": false,
+  "C_Cpp_Runner.msvcSecureNoWarnings": false,
+  "files.autoSave": "afterDelay",
+  "editor.wordWrap": "bounded",
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.enabled": false,
+  "workbench.startupEditor": "none",
+  "tabnine.experimentalAutoImports": true,
+  "workbench.colorTheme": "Evondev Dracula Author High Contrast",
+  "c-cpp-compile-run.run-in-external-terminal": true,
+  "code-runner.runInTerminal": true,
+  "code-runner.showExecutionTime": true,
+  "workbench.activityBar.location": "top",
+  "workbench.settings.applyToAllProfiles": [
+    "editor.fontFamily",
+    "extension.smoothscroll.linesToScroll"
+  ],
+  "editor.fontFamily": "SF mono, Operator mono, Dank Mono, Helvetica, sans-serif, JetBrains Mono, Fira Code,  Arial",
+  "editor.fontLigatures": true,
+  "gitlens.advanced.messages": {
+    "suppressGitDisabledWarning": true,
+    "suppressGitMissingWarning": true
+  },
+  "indentRainbow.colors": [
+    "rgba(3, 4, 94, 0.125)",
+    "rgba(2, 62, 138, 0.125)",
+    "rgba(0, 119, 182, 0.125)",
+    "rgba(0, 150, 199, 0.125)",
+    "rgba(0, 180, 216, 0.125)",
+    "rgba(72, 202, 228, 0.125)",
+    "rgba(144, 224, 239, 0.125)"
+  ],
+  "editor.lineHeight": 30,
+  "editor.scrollbar.horizontalScrollbarSize": 5,
+  "workbench.iconTheme": "material-icon-theme",
+  "extension.smoothscroll.totalDelay": 2000,
+  "vscode_custom_css.imports": [
+    "file:///C:/Documents/CUSTOMCODE/customvscode.css"
+  ],
+  "c-cpp-compile-run.output-location": "",
+  "editor.letterSpacing": 0.5,
+  "powermode.enabled": true,
+  "powermode.explosions.offset": 0.2,
+  "powermode.explosions.size": 3.5,
+  "powermode.shake.enabled": false,
+  "powermode.shake.intensity": 5,
+  "powermode.combo.counterEnabled": "hide",
+  "powermode.combo.location": "off",
+  "powermode.combo.timerEnabled": "hide",
+
+  "background.fullscreen": {
+    "images": [
+      "https://github.com/Nghiepcoder17v/NightTab/blob/main/2024-07-26_18_56_57.png?raw=true"
+    ],
+    "opacity": 0.9,
+    "size": "cover",
+    "position": "center",
+    "interval": 0
+  },
+
+  "liveServer.settings.CustomBrowser": "microsoft-edge",
+  "liveServer.settings.fullReload": true,
+  "editor.cursorWidth": 2,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "workbench.list.smoothScrolling": true,
+  "editor.smoothScrolling": true,
+  "terminal.integrated.smoothScrolling": true,
+  "extension.smoothscroll.linesToScroll": 50,
+
+  // New
+
+  "files.trimTrailingWhitespace": true,
+  "explorer.confirmDelete": false,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "vue-html": "html"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "debug.console.fontSize": 13,
+  "explorer.confirmDragAndDrop": false,
+  "files.autoSaveDelay": 5000,
+  "files.exclude": {
+    "**/.history": true,
+    "**/.next": true,
+    "**/.nuxt": true
+  },
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.donotVerifyTags": true,
+  "terminal.integrated.lineHeight": 1.5,
+  "eslint.alwaysShowStatus": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "turboConsoleLog.logMessagePrefix": "",
+  "turboConsoleLog.addSemicolonInTheEnd": true,
+  "codesnap.backgroundColor": "transparent",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.inlineSuggest.enabled": true,
+  "editor.formatOnSave": true,
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "indentRainbow.tabmixColor": "rgba(128,32,96,0)",
+  "indentRainbow.errorColor": "rgba(128,32,32,0)",
+  "[html]": {
+    "editor.matchBrackets": "never"
+  },
+  "[css]": {
+    "editor.matchBrackets": "never"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "html.format.wrapLineLength": 70,
+  "editor.unicodeHighlight.invisibleCharacters": false,
+  "scss.lint.unknownAtRules": "ignore",
+  "css.lint.unknownAtRules": "ignore",
+  "gitlens.codeLens.enabled": false,
+  "editor.cursorBlinking": "expand",
+  "editor.inlayHints.enabled": "on",
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "glean.showConversionWarning": false,
+  "glean.useExportDefault": true,
+  "explorer.compactFolders": false,
+  "color-highlight.markerType": "underline",
+  "editor.renderLineHighlight": "none",
+  "turboConsoleLog.includeFileNameAndLineNum": false,
+  "console-ninja.featureSet": "Pro",
+  "git.openRepositoryInParentFolders": "never",
+  "editor.guides.bracketPairs": "active",
+  "editor.guides.bracketPairsHorizontal": false,
+  "css.lint.unknownProperties": "ignore",
+  "workbench.editor.centeredLayoutFixedWidth": true,
+  "editor.renderWhitespace": "none",
+  "scss.lint.unknownProperties": "ignore",
+  "terminal.integrated.env.osx": {},
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className",
+    "ngClass",
+    ".*Class",
+    ".*ClassName"
+  ],
+  "window.newWindowDimensions": "maximized",
+  "editor.semanticHighlighting.enabled": true,
+  "workbench.fontAliasing": "antialiased",
+  "totalTypeScript.hideAllTips": true,
+  "editor.linkedEditing": true,
+  "workbench.colorCustomizations": {
+    "editor.linkedEditingBackground": "#ffffff00",
+    "selection.background": "#828bb828"
+  },
+  "symbols.hidesExplorerArrows": false,
+  "[markdown]": {
+    "editor.wordWrap": "bounded"
+  },
+  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.letterSpacing": 0.5,
+  "editor.fontSize": 17,
+  "C_Cpp.vcFormat.indent.accessSpecifiers": true,
+  "C_Cpp.vcFormat.indent.braces": true,
+  "editor.stickyTabStops": true,
+  "workbench.editor.empty.hint": "hidden",
+  "workbench.editor.enablePreview": false,
+  "window.commandCenter": false,
+  "window.menuBarVisibility": "compact",
+  "workbench.layoutControl.enabled": false,
+  "code-runner.executorMap": {
+    "cpp": "cd $dir && g++ -std=c++11 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
+  },
+  "github.copilot.editor.enableAutoCompletions": true,
+  "editor.scrollbar.verticalScrollbarSize": 5,
+  "gitlens.graph.scrollMarkers.enabled": false,
+  "workbench.secondarySideBar.defaultVisibility": "visible",
+  "chat.agent.enabled": false,
+  "chat.showAgentSessionsViewDescription": false,
+  "chat.commandCenter.enabled": false,
+  "chat.emptyChatState.enabled": false,
+  "inlineChat.lineNaturalLanguageHint": false,
+  "terminal.integrated.fontLigatures.enabled": true,
+  "workbench.editor.showTabs": "multiple",
+  "git.decorations.enabled": false,
+  "window.zoomLevel": 0.35,
+  "editor.wordWrapColumn": 120,
+  "background.editor": {
+    "useFront": true,
+    "style": {
+      "background-position": "100% 100%",
+      "background-size": "auto",
+      "opacity": 0.6
+    },
+    "styles": [{}, {}, {}],
+    "images": [],
+    "interval": 0,
+    "random": false
+  },
+  "background.enabled": true,
+  "workbench.statusBar.visible": false
+}
